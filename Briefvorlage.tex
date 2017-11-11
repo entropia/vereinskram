@@ -1,5 +1,12 @@
 % !TEX encoding = UTF-8 Unicode
 
+% Briefvorlage Entropia e.V.
+% Bitte hier oben nichts anpassen. Breiftext befindet sich unten.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LATEX-Config: DO NOT TOUCH  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[%%
    fontsize=10pt,%%          Schriftgroesse
 %  Satzspiegel
@@ -43,7 +50,6 @@
 \newkomavar{fromstreet}
 \newkomavar{fromdistrict}
 
-
 % Konfiguration:
 \setkomavar{fromname}{Entropia e.V.}
 \setkomavar{fromstreet}{Steinstraße 23}
@@ -51,7 +57,7 @@
 \setkomavar{fromphone}{+49 (0)721 5604732}
 \setkomavar{fromemail}{info@entropia.de}
 \setkomavar{signature}{{\large Entropia e.V.}}
-\setkomavar{fromurl}{entropia.de}
+\setkomavar{fromurl}{www.entropia.de}
 \setkomavar{frombank}{IBAN: DE30 6605 0101 0022 0256 13 \\ BIC: KARSDE66XXX \\ Bank: Sparkasse Karlsruhe}
 %%\setkomavar{customer}[\normalfont Kundennummer]{21 22 23}
 \setkomavar{date}[\normalfont Datum]{\today}
@@ -60,14 +66,15 @@
 	\parbox[t]{\textwidth}{\footnotesize
 
 	\begin{tabular}[t]{l@{}}
-		 \multicolumn{1}{@{}l@{}}{Kontakt:}\\
-		 \usekomavar{fromaddress} \\ \\
-		 Telefon: \usekomavar{fromphone} \\
-		 E-Mail: \usekomavar{fromemail}  \\
+		 \multicolumn{1}{@{}l@{}}{Vertreten durch den Vorstand:}\\
+     Ansgar Sonntag\\
+     Nicola Apicella\\
+     Martin Vietz
 	\end{tabular}
 	 \hfill{}
 	 \begin{tabular}[t]{l@{}}
-		 \multicolumn{1}{@{}l@{}}{Informationen:}\\
+		 \multicolumn{1}{@{}l@{}}{Rechtsform:}\\
+    Eingetragener gemeinnütziger Verein\\
 		Amtsgericht Mannheim\\
 		Registernummer: 102736
 	 \end{tabular}
@@ -84,17 +91,24 @@
 \setkomavar{fromaddress}{\usekomavar{fromstreet}\usekomavar[\\]{fromdistrict}}
 \makeatletter
 \@setplength{sigbeforevskip}{1.5ex}
+\@setplength{firstfootvpos}{275mm}
 \makeatother
 \setkomavar{fromlogo}{\includegraphics[height=40pt]{CCCKA-Entropia-Transparent.png}}
-\setkomavar{location}{\begin{tabular}[t]{@{}rl}
-\Letter & \usekomavar{fromname} \\
-& \usekomavar{fromstreet} \\
-& \usekomavar{fromdistrict} \\
-\Telefon & \usekomavar{fromphone} \\
-\MVAt & \usekomavar{fromemail}
-\end{tabular}}
+\setkomavar{location}{
+  \begin{tabular}[t]{@{}rl}
+    \Letter & \usekomavar{fromname} \\
+    & \usekomavar{fromstreet} \\
+    & \usekomavar{fromdistrict} \\
+    \Telefon & \usekomavar{fromphone} \\
+    \MVAt & \usekomavar{fromemail} \\
+    \Mundus & \usekomavar{fromurl}
+  \end{tabular}
+}
 \setkomavar{firsthead}{\hfill\usekomavar{fromlogo}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Ab hier fängt der Brief an  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
  \begin{letter}{Firma Böse
