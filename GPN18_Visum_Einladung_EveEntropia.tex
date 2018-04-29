@@ -1,0 +1,136 @@
+% !TEX encoding = UTF-8 Unicode
+
+% Briefvorlage Entropia e.V.
+% Bitte hier oben nichts anpassen. Breiftext befindet sich unten.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LATEX-Config: DO NOT TOUCH  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[%%
+   fontsize=10pt,%%          Schriftgroesse
+%  Satzspiegel
+   paper=a4,%%               Papierformat
+   enlargefirstpage=on,%%    Erste Seite anders
+   pagenumber=headright,%%   Seitenzahl oben mittig
+% Layout
+   headsepline=on,%%         Linie unter der Seitenzahl
+   parskip=half,%%           Abstand zwischen Absaetzen
+% Briefkopf und Anschrift
+   fromalign=right,%%        Plazierung des Briefkopfs
+   fromphone=on,%%           Telefonnummer im Absender
+   fromrule=off,%%           Linie im Absender (aftername, afteraddress)
+   fromfax=off,%%            Faxnummer
+   fromemail=on,%%           Emailadresse
+   fromurl=on,%%            Homepage
+   fromlogo=on,%%            Firmenlogo
+   addrfield=on,%%           Adressfeld fuer Fensterkuverts
+   backaddress=on,%%          ...und Absender im Fenster
+   subject=beforeopening,%%  Plazierung der Betreffzeile
+   locfield=wide,%%          zusaetzliches Feld fuer Absender
+   foldmarks=on,%%           Faltmarken setzen
+   numericaldate=off,%%      Datum numerisch ausgeben
+   refline=narrow,%%         Geschaeftszeile im Satzspiegel
+% Formatierung
+   draft=false%%             Entwurfsmodus
+]{scrlttr2}
+
+\usepackage[utf8]{inputenc}
+\usepackage{marvosym}
+\usepackage{ngerman}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\renewcommand*{\familydefault}{\ttdefault}
+
+\linespread{1.15}
+% Werte: DIN, DINmtext, SN, SNleft, KOMAold.
+\LoadLetterOption{DINmtext}
+\newkomavar{fromstreet}
+\newkomavar{fromdistrict}
+
+% Konfiguration:
+\setkomavar{fromname}{Entropia e.V.}
+\setkomavar{fromstreet}{Steinstraße 23}
+\setkomavar{fromdistrict}{76133 Karlsruhe, Germany}
+\setkomavar{fromphone}{+49 (0)721 5604732}
+\setkomavar{fromemail}{info@entropia.de}
+\setkomavar{fromurl}{https://entropia.de/}
+\setkomavar{frombank}{IBAN: DE30 6605 0101 0022 0256 13 \\ BIC: KARSDE66XXX \\ Bank: Sparkasse Karlsruhe}
+%%\setkomavar{customer}[\normalfont Kundennummer]{21 22 23}
+\setkomavar{date}[\normalfont Datum]{\today}
+
+\setkomavar{firstfoot}{
+	\parbox[t]{\textwidth}{\footnotesize
+
+	\begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Vertreten durch den Vorstand:}\\
+     Ansgar Sonntag\\
+     Nicola Apicella\\
+     Martin Vietz
+	\end{tabular}
+	 \hfill{}
+	 \begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Rechtsform:}\\
+    Eingetragener gemeinnütziger Verein\\
+		Amtsgericht Mannheim\\
+		Registernummer: 102736
+	 \end{tabular}
+	 \hfill{}
+	 \begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{\usekomavar*{frombank}:}\\
+		 \usekomavar{frombank}
+	 \end{tabular}
+ }}
+%\nextfoot{\usekomavar{firstfoot}}
+\pagestyle{headings}
+
+\setkomavar{backaddressseparator}{ \textperiodcentered\  }
+\setkomavar{fromaddress}{\usekomavar{fromstreet}\usekomavar[\\]{fromdistrict}}
+\makeatletter
+\@setplength{sigbeforevskip}{1.5ex}
+\@setplength{firstfootvpos}{275mm}
+\makeatother
+\setkomavar{fromlogo}{\includegraphics[height=40pt]{CCCKA-Entropia-Transparent.png}}
+\setkomavar{location}{
+  \begin{tabular}[t]{@{}rl}
+    \Letter & \usekomavar{fromname} \\
+    & \usekomavar{fromstreet} \\
+    & \usekomavar{fromdistrict} \\
+    \Telefon & \usekomavar{fromphone} \\
+    \MVAt & \usekomavar{fromemail} \\
+    \Mundus & \usekomavar{fromurl}
+  \end{tabular}
+}
+\setkomavar{firsthead}{\hfill\usekomavar{fromlogo}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Ab hier fängt der Brief an  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+ \begin{letter}{Eve Entropia
+\\ Steinstraße 23
+\\ 76133 Karlsruhe
+\\ Germany
+}
+
+\setkomavar{subject}{Confirmation for your participation at GPN18}
+\opening{Dear Ms Eve Entropia,}
+\renewcommand*{\familydefault}{\ttdefault}
+
+This is to confirm that your presentation "SUBMISSION NAME" is accepted for our IT-conference "18. Gulaschprogrammiernacht" (GPN18). The GPN18 takes place from 10 - 13 May, 2018 at the Karlsruhe University of Arts and Design (HfG).
+
+The GPN18 has no registration fee and the Entropia e.V. can't provide you with any financial support for travel or accomodation expenses.
+
+Additional information about the conference can be found here (https://www.gulas.ch/) and here (https://de.wikipedia.org/wiki/Gulaschprogrammiernacht).
+
+If you have any questions or concerns, or if I may be of assistance in any way, please do not hesitate to contact us at gpnorga@lists.entropia.de or me directly at christian.loelkes@entropia.de
+
+\setkomavar{signature}{Christian Lölkes - Project Lead GPN18}
+
+\closing{Yours faithfully,}
+\end{letter}
+
+\end{document}
