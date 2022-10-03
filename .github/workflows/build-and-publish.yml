@@ -12,3 +12,8 @@ jobs:
           root_file: mitgliedsantrag.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
+      - name: Publish mitgliedsantrag
+        uses: actions/upload-artifact@v3
+        with:
+          name: mitgliedsantrag.pdf
+          path: mitgliedsantrag.pdf
