@@ -19,12 +19,12 @@ jobs:
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
       - name: Publish mitgliedsantrag
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mitgliedsantrag.pdf
           path: mitgliedsantrag.pdf
       - name: Publish foerdermitgliedsantrag
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: foerdermitgliedsantrag.pdf
           path: foerdermitgliedsantrag.pdf
