@@ -1,12 +1,17 @@
 name: Build LaTeX document and release
 on: 
-  push:
-    tags:
-      - "v*.*.*"
+  pull_request:
+    types: 
+      - closed
     branches: 
-      - "main"
+      - main
+
+permissions:
+  contents: write 
+
 jobs:
   build_latex:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,13 +40,14 @@ jobs:
           name: foerdermitgliedsantrag.pdf
           path: foerdermitgliedsantrag.pdf
           retention-days: 7
-      - name: Get current date 
-        id: date 
-        run: echo "DATE=$(date +%Y-%m-%d)" >> $GITHUB_ENV
+      - name: Create release tag
+        uses: igorgatis/date-time-commit-release@v2
+        with:
+          commit: main
+          tag.format: "v{YYYY}-{MM}-{DD}-{sha:5}"
       - name: Release 
         uses: softprops/action-gh-release@v3
         with:
-          name: "${{env.DATE}}"
           files: | 
             foerdermitgliedsantrag.pdf
             mitgliedsantrag.pdf
