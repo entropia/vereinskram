@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   build_latex:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
