@@ -43,7 +43,7 @@ jobs:
       - name: Create release tag
         uses: igorgatis/date-time-commit-release@v2
         with:
-          commit: main
+          commit: master
           tag.format: "v{YYYY}-{MM}-{DD}-{sha:5}"
       - name: Release 
         uses: softprops/action-gh-release@v3
