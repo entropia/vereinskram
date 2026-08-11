@@ -59,3 +59,4 @@ jobs:
             foerdermitgliedsantrag.pdf
             mitgliedsantrag.pdf
           tag_name: ${{steps.tag_version.outputs.new_tag}}
+          body: ${{steps.tag_version.outputs.changelog}}
